@@ -1,0 +1,4 @@
+EN EL ARCHIVO DE PACKAGES.JSON ESTAN CONTENIDOS LAS DEPENDENCIAS DE NPM NECESARIAS PARA TRABAJAR CON GULP
+ADEMAS ESTA LA INSTALACION DE CYPRESS.. TODO LO QUE TENGA RELACION CON NPM O NPX ESTARA EN ESE ARCHIVO. 
+
+/** RECORDEMOS que para instalar todas las dependencias solo debemos escribir en el terminal el comando de npm i y se instalara y creara la carpeta de node-modules.  **/

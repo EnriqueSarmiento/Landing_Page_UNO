@@ -1,0 +1,35 @@
+/** EN ESTE ARCHIVO ESTAN LAS IMPORTACIONES DE LOS DEMAS DOCUMENTOS DE TIPO SCSS Y ES ESTE ARCHIVO EL QUE SE COMPILARA Y SE DESPOSITARA EN LA CARPETA DE BUILD CON GULP. */
+
+/** CADA VEZ QUE AGREGEMOS UN ARCHIVO DE SCSS DEBEMOS IMPORTARLO AQUI.  **/
+
+// /** COMPONENTES BASE COMO NORMALIZE, VARIABLES, MIXINS, ELEMENTOS GLOBALES, UTILIDADES, BOTONES, ETC **/
+
+@import 'base/normalize';
+@import 'base/mixins';
+
+
+//bootstrap 
+@import "base/bootstrap";
+@import 'animate.css';
+
+//Globales
+@import "base/globales";
+ 
+
+// /** UI: COMPONENTES DEL LAYOUT COMO HEADER, FOOTER, NAVEGACION, ICONOS, PAGINAS GENERALES DE LA APLICACION**/
+
+@import 'layout/error404';
+// @import 'layout/header';
+// // @import 'layout/footer';
+
+
+// /** Paginas publicas **/
+@import 'internas/index';
+
+
+
+
+
+
+
+

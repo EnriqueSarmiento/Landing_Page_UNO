@@ -1,0 +1,77 @@
+/////////////////////////
+//1. Fuente tipografica
+////////////////////////
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap');
+$fuente_principal: 'Poppins', sans-serif;
+
+
+//** Tamaño de fuente **//
+$superDelgada: 100;
+$delgada: 300;
+$regular : 400;
+$bold: 700;
+///////////////////////
+//2. Patrones de colores
+////////////////////////
+$primario: #5b50fa;
+$primarioShadow: #8882e45d;
+$secundario: #f5a913;
+$terciario: #9df1ba;
+$negro: #040404;
+$back: #e1e0f15d;
+$blanco: #FFFFFF;
+$gris: #e1e1e1;
+$grisOscuro: #333333;
+$tHolder: rgba($color: $grisOscuro, $alpha: .7);
+
+
+
+////////////////////////
+//3. Modificando variables de Bootstrap
+////////////////////////
+$font-family-base: $fuente_principal;
+
+$font-weight-lighter:         $superDelgada;
+$font-weight-light:           $delgada;
+$font-weight-normal:          $regular;
+$font-weight-bold:            $bold;
+//gama de colores
+$theme-colors: (
+  "primary":    $primario,
+  "secondary":  $blanco,
+  "success":    $secundario,
+  "light":      $gris,
+  "info":       $grisOscuro,
+  "dark":       $negro
+);
+//acordion
+$accordion-button-padding-y: .7rem;
+$accordion-bg: #ffffff00;
+$accordion-button-color: $primario;
+$accordion-button-bg: #ffffff00;
+$accordion-button-active-color: $primario;
+$accordion-button-active-bg: $primarioShadow;
+$accordion-button-focus-border-color:     $primario;
+$accordion-button-focus-box-shadow: none;
+$accordion-border-width:  .2rem;
+$accordion-border-color:  rgba($primario, .125);
+$accordion-border-radius: .8rem;
+$accordion-inner-border-radius: none ;
+
+//toggle
+$navbar-toggler-border-radius: .5rem;
+$navbar-toggler-focus-width: .05rem;
+
+//botones
+$btn-border-radius: 10px;
+
+//popovers
+$popover-font-size: 11px;
+$popover-bg: $blanco;
+$popover-body-color: $primario;
+$popover-header-padding-y: 0px;
+$popover-body-padding-y: 5px;
+$popover-arrow-width: 8px;
+
+//importando bootstrap
+@import "./../../node_modules/bootstrap/scss/bootstrap.scss";
