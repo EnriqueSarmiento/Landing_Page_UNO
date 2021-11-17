@@ -19,7 +19,7 @@ $router = new Router();
 
 //PUBLICAS
 $router->get('/', [PaginasController::class, 'index']);
-$router->get('/nosotros', [PaginasController::class, 'nosotros']);
+$router->get('/portafolio', [PaginasController::class, 'portafolio']);
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->get('/servicios', [PaginasController::class, 'servicios']);
 $router->get('/error404', [PaginasController::class, 'error404']);

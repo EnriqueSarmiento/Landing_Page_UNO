@@ -13,16 +13,12 @@ $bold: 700;
 ///////////////////////
 //2. Patrones de colores
 ////////////////////////
-$primario: #5b50fa;
-$primarioShadow: #8882e45d;
-$secundario: #f5a913;
-$terciario: #9df1ba;
+$primario: #4E51BF;
+$secundario: #222465;
+$terciario: #0F13A5;
+$extra: #FB5D64;
 $negro: #040404;
-$back: #e1e0f15d;
 $blanco: #FFFFFF;
-$gris: #e1e1e1;
-$grisOscuro: #333333;
-$tHolder: rgba($color: $grisOscuro, $alpha: .7);
 
 
 
@@ -38,40 +34,12 @@ $font-weight-bold:            $bold;
 //gama de colores
 $theme-colors: (
   "primary":    $primario,
-  "secondary":  $blanco,
-  "success":    $secundario,
-  "light":      $gris,
-  "info":       $grisOscuro,
+  "secondary":  $secundario,
+  "success":    $extra,
+  "light":      $blanco,
+  "info":       $negro,
   "dark":       $negro
 );
-//acordion
-$accordion-button-padding-y: .7rem;
-$accordion-bg: #ffffff00;
-$accordion-button-color: $primario;
-$accordion-button-bg: #ffffff00;
-$accordion-button-active-color: $primario;
-$accordion-button-active-bg: $primarioShadow;
-$accordion-button-focus-border-color:     $primario;
-$accordion-button-focus-box-shadow: none;
-$accordion-border-width:  .2rem;
-$accordion-border-color:  rgba($primario, .125);
-$accordion-border-radius: .8rem;
-$accordion-inner-border-radius: none ;
-
-//toggle
-$navbar-toggler-border-radius: .5rem;
-$navbar-toggler-focus-width: .05rem;
-
-//botones
-$btn-border-radius: 10px;
-
-//popovers
-$popover-font-size: 11px;
-$popover-bg: $blanco;
-$popover-body-color: $primario;
-$popover-header-padding-y: 0px;
-$popover-body-padding-y: 5px;
-$popover-arrow-width: 8px;
 
 //importando bootstrap
 @import "./../../node_modules/bootstrap/scss/bootstrap.scss";

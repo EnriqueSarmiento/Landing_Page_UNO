@@ -13,39 +13,15 @@
 </head>
 <body>
 
-        <header>
-            <div class="header 
-                <?php if($_SERVER['REQUEST_URI'] === '/login'){ ?>
-                    d-none
-                <?php } ?> 
-            ">
-                <a href="/">inicio</a>
-                <a href="/nosotros">Nosotros</a>
-                <a href="/servicios">Servicios</a>
-                <a href="/contacto">Contactos</a>
-                <a href="/login">Iniciar Sesión</a>
-            </div>
-        </header>
+    <header>
+        <?php include __DIR__ . '/plantillas/header.php';  ?>
+    </header>
     
-    <div class="contenido-vista">
     <?php   /** ESTO MUESTRA EL CONTENIDO DE LA VISTA POR EL CONTROLADOR */
         echo $contenido 
     ?>
-        
-
-
-    </div>
-
-
-
     <footer>
-        <div class="footer 
-            <?php if($_SERVER['REQUEST_URI'] === '/login'){ ?>
-                    d-none
-            <?php } ?> 
-        ">
-            <p>Todos los derechos reservados</p>
-        </div>
+        <?php include __DIR__ . '/plantillas/footer.php';  ?>
     </footer>
 
     <script src="/build/js/bundle.min.js"></script>

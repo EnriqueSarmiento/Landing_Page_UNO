@@ -8,8 +8,8 @@ Class PaginasController{
     public static function index(Router $router){
         $router->render('/paginas/index');
     }
-    public static function contacto(Router $router){
-        $router->render('/paginas/contacto');
+    public static function portafolio(Router $router){
+        $router->render('/paginas/portafolio');
     }
     public static function nosotros(Router $router){
         $router->render('/paginas/nosotros');
