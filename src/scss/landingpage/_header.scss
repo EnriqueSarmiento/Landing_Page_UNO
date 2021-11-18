@@ -1,3 +1,309 @@
 .header{
-    background-color: $primario;
+    background-image: url("/build/img/banner_UNO@2x.png");
+    width: 100vw;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    .contenedor-nav{
+        position: fixed;
+        z-index: 1;
+        top: 0px;
+        width: 100%!important;
+        padding: 12.5px 5%!important;
+        align-items: center;
+        justify-content: space-between!important;
+        margin: 0 0 0 0!important;
+        display: flex;
+        flex-direction: row;
+        .menu-burger{
+            width: 100%;
+            .burger{
+                background-color: $blanco;
+                color: $primario;
+                border-radius: 50%;
+                width: 45px;
+                height: 45px;
+                font-size: 35px;
+                line-height: 35px;
+                text-align: center;
+                align-items: center;
+                cursor: pointer!important;
+                margin: auto;
+                margin-right: 0px!important;
+                margin-left: auto;
+            }
+        }
+        .logotipo{
+            width: 100%;
+            height: fit-content!important;
+            margin-left: 0px!important;
+            .logo-svg{
+                width: 100%!important;
+                height: 24.4%!important;
+            }
+        }
+        .navegacion{
+            display: none;
+        }
+    }
+    .contenedor{
+        height: 100%;
+        padding-top: 40%;
+        
+        .contenido-header-inicio{
+            display: flex;
+            flex-direction: row;
+            .contenido{
+                padding: 1.5rem 0px;
+                padding-right: 1rem;
+            }
+            .header-titulo{
+                font-weight: $black;
+                font-size: 25px;
+                letter-spacing: 1px;
+                color: $blanco;
+            }
+            .header-secundario{
+                color: $blanco;
+                font-weight: $delgada;
+                font-size: 12px;
+                padding-bottom: 1rem;
+                text-align: justify!important;
+            }
+        }
+    }
+    .boton-header{
+        .boton{
+            @include boton($extra); 
+            font-size: 12px!important;
+        }
+    }
+    
+}
+
+//*** SIDEBAR ***//
+.contenedor-sidebar{
+    .sidebar{
+        display: flex!important;
+        flex-direction: column!important;
+        .side-titulo{
+            height: fit-content!important;
+            color: $blanco;
+        }
+        .menu-sidebar{
+            .navegacion{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            .enlace-nav{
+                color: $blanco;
+                margin-top: 1rem;
+                font-size: 18px;
+                font-weight: $delgada;
+                letter-spacing: 1px;
+            }
+            
+        }
+    }
+}
+
+//*** NAVEGACION EFECTO HOVER Y ACTIVE ***//
+@keyframes bordeSlide{
+    0%{
+        width: 0%;
+        margin: auto 50%;
+    }
+    100%{
+        width: 100%;
+        margin: auto 0%!important;
+
+    }
+}
+.navegacion{
+    .enlace-nav{
+        position: relative;
+    }
+    .enlace-nav:hover{
+        color: $extra!important;
+        transition: color .4s ease;
+    }
+    .enlace-nav:active{
+        color: $extra!important;
+        border-bottom: 1.5px solid $extra!important;
+    }
+    
+    .enlace-nav::after{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+    }
+    .enlace-nav:hover::after{
+        border-bottom: 1.5px solid $extra;
+        animation: bordeSlide .4s linear;
+        
+    }
+
+}
+
+//*** NAVEGACION ESTATICA EN EL TOP DEL VPORT ***//
+.navegacion-scroll{
+    background-color: $primario!important;
+    transition: all .35s ease-in-out;
+}
+
+//*** BREAKPOINTS ***//
+@media (min-width: 576px) {
+    .header{
+        .contenedor{
+            padding-top: 25%!important;
+            .header-titulo{
+                font-size: 30px!important;
+            }
+            .header-secundario{
+                font-size: 15px!important;
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .header{
+        height: 600px!important;
+        .logotipo{
+            width: 45%!important;
+        }
+        .contenedor{
+            padding-top: 18%!important;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            .carousel{
+                width: 55%!important;
+            }
+            .contenido{
+                padding-top: 10%!important;
+            }
+        }
+        .illustracion{
+            display: block!important;
+            width: auto!important;
+            .illustracion-header{
+                width: 100%;
+                .robot{
+                    width: 115%;
+                    height: 115%;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 992px) {
+    .header{
+        .contenedor-nav{
+            .logotipo{
+                width: 10%!important;
+            }
+            .menu-burger{
+                display: none;
+            }
+            .navegacion{
+                display: flex!important;
+                flex-direction: row!important;
+                justify-content: space-between;
+                width: 40%!important;
+                .enlace-nav{
+                    color: $blanco;
+                    text-decoration: none;
+
+                }
+            }
+        }
+        .contenedor{
+            padding-top: 13%!important;
+        }
+        .illustracion-header{
+            width: 100%;
+            .robot{
+                width: 145%!important;
+                height: 145%!important;
+            }
+        }
+
+    }
+}
+@media (min-width: 1200px) {
+    .header{
+        height: 90vh!important;
+        .contenedor-nav{
+            
+            .menu-burger{
+                display: none;
+            }
+            .navegacion{
+                display: flex!important;
+                flex-direction: row!important;
+                justify-content: space-between;
+                width: 40%!important;
+                .enlace-nav{
+                    color: $blanco;
+                    text-decoration: none;
+                    font-size: 18px;
+
+                }
+            }
+        }
+        .contenedor{
+            padding-top: 14%!important;
+            .header-titulo{
+                font-size: 45px!important;
+            }
+            .header-secundario{
+                font-size: 18px!important;
+            }
+            .illustracion{
+                padding-left: 5%;
+            }
+        }
+        .illustracion-header{
+            width: 100%;
+            .robot{
+                width: 165%!important;
+                height: 165%!important;
+            }
+        }
+
+    }
+}
+@media (min-width: 1400px) {
+    .header{
+        height: 95vh!important;
+        .contenedor{
+            padding-top: 12%!important;
+            .header-titulo{
+                font-size: 50px!important;
+            }
+            .header-secundario{
+                font-size: 20px!important;
+            }
+        }
+        .illustracion-header{
+            .robot{
+                width: 190%!important;
+                height: 190%!important;
+            }
+        }
+        .boton-header{
+            .boton{
+                font-size: 15px!important;
+                padding: .5rem 1.5rem!important;
+                width: 350px!important;
+            }
+        }
+    }
 }

@@ -22,3 +22,16 @@
     grid-template-columns: repeat($columnas, 1fr);
 }
 
+
+@mixin boton($color){
+    width: 250px!important;
+    height: 45px!important;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    background-color: $color!important;
+    align-items: center;
+    color: $blanco;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: $delgada;   
+}

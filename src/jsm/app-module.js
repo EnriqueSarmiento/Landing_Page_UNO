@@ -6,8 +6,11 @@
 // ES6 Modules or TypeScript
 import ApexCharts from './apexcharts.esm.js';
 import Cropper from './cropper.esm.js';
+import anime from './anime.es.js';
 
-
+document.addEventListener('DOMContentLoaded', function(){
+    
+})
 
 
 

@@ -41,5 +41,10 @@ $theme-colors: (
   "dark":       $negro
 );
 
+// header 
+$carousel-transition-duration: 1.5s;
+
+
+
 //importando bootstrap
 @import "./../../node_modules/bootstrap/scss/bootstrap.scss";

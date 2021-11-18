@@ -27,5 +27,7 @@
     <script src="/build/js/bundle.min.js"></script>
     <script src="/build/js/bundle-module.min.js" type="module"></script>
     <script src="/build/js/sweetalert2.all.min.js"></script>
+    <script src="/build/js/anime.min.js"></script>
+
 </body>
 </html>

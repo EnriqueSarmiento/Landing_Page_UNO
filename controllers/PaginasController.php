@@ -17,6 +17,9 @@ Class PaginasController{
     public static function servicios(Router $router){
         $router->render('/paginas/servicios');
     }
+    public static function contacto(Router $router){
+        $router->render('/paginas/contacto');
+    }
     public static function error404(Router $router){
         $router->render('/paginas/error404');
     }
