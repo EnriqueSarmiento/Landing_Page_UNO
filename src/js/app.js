@@ -6,10 +6,12 @@
 document.addEventListener('DOMContentLoaded', function(){
   eventListeners();
   navegador();
+  servicios();
 })
 
 function eventListeners(){
   document.getElementById('burger').addEventListener('click', sidebar);
+
 }
 
 // SIDEBAR //
@@ -78,5 +80,56 @@ function navegador() {
   })
   observer.observe(document.querySelector('.header'));
 }
+
+//MOSTRANDO INFO SERVICIOS //
+function servicios(){
+  var servicios = document.querySelectorAll('.servicio');
+
+  // REGISTRAR EL CLICK EN EL SERVICIO //
+  for(let i = 0; i < servicios.length; i++){
+    // AGREGANDO EL EVENTO A TODOS LOS SERVICIOS //
+    servicios[i].addEventListener('click', function(){
+      // CERRAR ELEMENTO SI HAY ALGUNO ABIERTO //
+      elementos();
+      var elemento = servicios[i].nextElementSibling;
+      // VERIFICANDO CLASES DEL ELEMENTO Y MOSTRAR O NO MOSTRAR //
+      if(elemento.classList.contains('d-none')){
+        servicios[i].classList.add('servicio-activo');
+        elemento.classList.replace('d-none', 'd-block')
+        elemento.classList.replace('animate__zoomOut', 'animate__zoomIn' )
+      }else if(elemento.classList.contains('d-block')){
+        elemento.classList.replace('animate__zoomIn', 'animate__zoomOut' )
+        servicios[i].classList.remove('servicio-activo');
+
+        setTimeout(()=>{
+          elemento.classList.replace('d-block','d-none');
+        }, 450);
+      }
+    });
+  }
+  // FUNCION QUE CIERRA LOS OTROS ELEMENTOS SI ESTAN ABIERTOS //
+  function elementos(){
+    var elementos = document.querySelectorAll('.mas-info');
+    for(let e = 0; e < elementos.length; e++){
+      // seleccionando el elemento anterior //
+      var claseActivo = elementos[e].previousElementSibling;
+      if(elementos[e].classList.contains('d-block')){
+        elementos[e].classList.replace('animate__zoomIn', 'animate__zoomOut' )
+        // SI EXISTE LA CLAVE DE ACTIVO EN EL SERVICIO, ELIMINARLA// 
+        if(claseActivo.classList.contains('servicio-activo')){
+          claseActivo.classList.remove('servicio-activo');
+        }
+        setTimeout(()=>{
+          elementos[e].classList.replace('d-block','d-none');
+        }, 450);
+
+      }
+    }
+
+  }
+  
+  
+}
+
 
 

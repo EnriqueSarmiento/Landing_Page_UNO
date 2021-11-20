@@ -1,0 +1,273 @@
+.landing-page{
+    background: -prefix-linear-gradient(top, $primario, $blanco)!important;
+    background: linear-gradient(to bottom, $primario, $blanco)!important;
+    padding-top: 1.5rem;
+    .servicios, .proceso{
+        .caja{
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+        .servicio{
+            background-color: $secundario;
+            border-radius: 10px;
+            width: 250px;
+            max-height: 250px;
+            margin: 0 auto;
+            margin-bottom: 1rem!important;
+            cursor: pointer;
+            position: relative;
+            .contenedor-servicio{
+                width: 85%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                padding: 1rem 0!important;
+            }
+            h3{
+                color: $blanco;
+                font-weight: $regular;
+                margin-top: .5rem;
+                font-size: 20px;
+            }
+            .mini-info{
+                color: $blanco;
+                font-size: 15px;
+                font-weight: $delgada;
+                margin-top: .5rem;
+            }
+            
+        }
+        .mas-info{
+            background-color: $terciario;
+            border-radius: 10px;
+            width: 100%;
+            height: fit-content;
+            padding: 1rem 0px;
+            margin-bottom: 1rem;
+            .contenedor-mas{
+                width: 85%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+            }
+            .icono-info{
+                width: 50%;
+                height: 50%;
+                margin: 0 auto;
+                svg{
+                    width: 60%;
+                    height: 60%;
+                }
+            }
+            .header-mas{
+                color: $blanco;
+                text-transform: uppercase;
+                font-size: 15px;
+                font-weight: $regular;
+            }
+            .informacion{
+                color: $blanco;
+                font-weight: $delgada;
+                font-size: 12px;
+                text-align: justify;
+            }
+            .boton-mas{
+                .boton{
+                    @include boton($extra);
+                    padding-left: 30%;
+                    padding-right: 30%;
+                }
+            }
+            .boton-leer{
+                .boton-not{
+                    @include boton($blanco);
+                    background-color: transparent!important;
+                    border: 2px solid $blanco;
+                    padding-left: 30%;
+                    padding-right: 30%;
+                }
+            }
+            .opciones-mas{
+                display: flex;
+                flex-direction: column;
+                height: 150px;
+                justify-content: space-around;
+                
+            }
+
+        }
+        
+    }
+}
+
+//*** SERVICIO EFECTOS HOVERS EN GENERAL ***//
+.servicio:hover{
+    background-color: $terciario!important;
+    box-shadow: 1px 5px 15px rgba($color: $secundario, $alpha: .25);
+    transition: all .5s ease;
+}
+.servicio-activo{
+    background-color: $terciario!important;
+    box-shadow: 1px 5px 15px rgba($color: $secundario, $alpha: .25);
+
+}
+
+//**  ANIMACION SERVICIOS ANIMATE.CSS **//
+.animate__animated.animate__zoomIn {
+    --animate-duration: 1s;
+}
+
+//*** BREACKPOINTS ***//
+@media (min-width: 576px) {
+    .landing-page{
+        //*** SCSS MAS INFORMACION SERVICIOS ***//
+        .contenedor-mas{
+            flex-direction: row!important;
+            align-items: center!important;
+            margin-left: 0px!important;
+            width: 90%!important;
+            .icono-info{
+                width: 40%!important;
+                height: 40%!important;
+            }
+
+            .mas{
+                width: 60%;
+                text-align: start!important;
+                .boton, .boton-not{
+                    font-size: 15px!important;
+                    padding-left: 25%!important;
+                    padding-right: 25%!important;
+                }
+                .header-mas{
+                    font-size: 20px!important;
+                    margin-bottom: 1rem!important;
+                }
+            }
+            .opciones-mas{
+                height: 75px!important;
+                flex-direction: row!important;
+                justify-content: flex-start!important;
+                align-items: center!important;
+            }
+            .boton-mas{
+                width: 40%!important;
+                margin-right: 5%!important;
+            }
+            .boton-leer{
+                width: 40%!important;
+            }
+            
+        }
+        
+    }
+}
+
+@media (min-width: 768px) {
+    .landing-page{
+        .cajas{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr auto 1fr auto;
+            grid-template-areas: 
+            "design desarrollo"
+            "info info"
+            "cms seo"
+            "info2 info2";
+            .design{
+                grid-area: design;
+            }
+            .desarrollo{
+                grid-area: desarrollo;
+            }
+            .cms{
+                grid-area: cms;
+            }
+            .seo{
+                grid-area: seo;
+            }
+            #design, #desarrollo{
+                grid-area: info;
+            }
+            #cms, #seo{
+                grid-area: info2;
+            }
+            .mas-info{
+                width: 87%!important;
+                margin: 0rem auto 1rem!important;
+            }
+            .mas{
+                width: 70%!important;
+            }
+            .contenedor-mas{
+                width: 92%!important;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .landing-page{
+        .cajas{
+            width: 100%!important;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr auto;
+            grid-template-areas: 
+            "design desarrollo cms seo"
+            "info info info info"!important;
+            justify-content: space-between!important;
+            .design{
+                grid-area: design;
+            }
+            .desarrollo{
+                grid-area: desarrollo;
+            }
+            .cms{
+                grid-area: cms;
+            }
+            .seo{
+                grid-area: seo;
+            }
+            #design, #desarrollo, #cms, #seo{
+                grid-area: info;
+            }
+            .mas-info{
+                max-width: 110rem!important;
+                width: 97.5%!important;
+                margin: 0rem auto 1rem!important;
+                height: 325px!important;
+            }
+            .icono-info{
+                width: auto!important;
+                height: auto!important;
+                svg{
+                    width: 100%!important;
+                    height: 100%!important;
+                }
+            }
+            .mas{
+                width: 70%!important;
+                text-align: start!important;
+                .boton, .boton-not{
+                    font-size: 18px!important;
+                    padding-left: 25%!important;
+                    padding-right: 25%!important;
+                }
+                .header-mas{
+                    font-size: 25px!important;
+                    margin-bottom: 1rem!important;
+                }
+                .informacion{
+                    font-size: 17px!important;
+                }
+            }
+            .contenedor-mas{
+                width: 92%!important;
+            }
+        }
+    }
+}
