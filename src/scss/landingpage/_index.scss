@@ -301,6 +301,9 @@
 
 //*** BREACKPOINTS ***//
 @media (min-width: 576px) {
+    section{
+        padding-top: 2rem!important;
+    }
     .landing-page{
         //*** SCSS MAS INFORMACION SERVICIOS ***//
         .contenedor-mas{
@@ -360,6 +363,9 @@
 }
 
 @media (min-width: 768px) {
+    section{
+        padding-top: 2.5rem;
+    }
     .landing-page{
         .cajas{
             display: grid;

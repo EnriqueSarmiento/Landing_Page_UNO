@@ -6,8 +6,10 @@
 document.addEventListener('DOMContentLoaded', function(){
   eventListeners();
   navegador();
+  scroll();
   servicios();
   AOS.init();
+  footer()
 })
 
 function eventListeners(){
@@ -22,11 +24,11 @@ function sidebar(){
             title: 'MENU',
             html: `
             <div class="navegacion d-flex flex-column">
-                <a class="enlace-nav" href="/">inicio</a>
-                <a class="enlace-nav" href="/servicios">Servicios</a>
-                <a class="enlace-nav" href="/portafolio">Planes</a>
-                <a class="enlace-nav" href="/contacto">Contacto</a>
-                <a class="enlace-nav" href="#"><i class="bi bi-search"></i></a>
+              <a class="enlace-nav active" href="#landing">inicio</a>
+              <a class="enlace-nav" href="#servicios">Servicios</a>
+              <a class="enlace-nav" href="#planes">Planes</a>
+              <a class="enlace-nav" href="#contactanos">Contacto</a>
+              <a class="" href=""><i class="bi bi-search"></i></a>            
             </div>
 
             `
@@ -82,6 +84,31 @@ function navegador() {
   observer.observe(document.querySelector('.header'));
 }
 
+// CLICK ENLACES NAVEGACION SCROLL SMOOTH //
+function scroll(){
+  var enlaces = document.querySelectorAll('.enlace-nav');
+  
+  // AGREGANDO EVENTO CLICK A LOS ENLACES //
+  for(let i = 0; i < enlaces.length; i++){
+    enlaces[i].addEventListener('click', function(e){
+        var seccion = enlaces[i].getAttribute('href');
+
+        seccion.scrollIntoView( {
+          behavior: 'smooth'
+      });
+    })
+  }
+}
+
+// ENLACES FOOTER //
+function footer(){
+  var enlaces = document.querySelectorAll('.enlace-foot');
+  enlaces.forEach(function(enlace){
+    enlace.addEventListener('click', function(e){
+      e.preventDefault();
+    })
+  })
+}
 //MOSTRANDO INFO SERVICIOS //
 function servicios(){
   var servicios = document.querySelectorAll('.servicio');
