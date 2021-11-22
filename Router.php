@@ -26,7 +26,6 @@ class Router{
         $auth = $_SESSION['login']?? null; 
 
         //RUTAS PROTEGIDAS PARA ZONA ADMINISTRATIVA... escribir las rutas dentro de este arreglo 
-        $rutasProtegidas = ['/admin/area-admin', '/admin/administradores', '/admin/crear-admin', '/admin/crear-admin', '/admin/editar-admin', '/admin/editar-producto', '/admin/productos' ]; 
 
         $urlActual = $_SERVER['PATH_INFO'] ?? "/"; 
         $metodo = $_SERVER['REQUEST_METHOD']; 
@@ -35,11 +34,6 @@ class Router{
             $fn = $this->rutasGET[$urlActual] ?? null;
         }else{
             $fn = $this->rutasPOST[$urlActual] ?? null;    
-        }
-
-        //Proteger las vistas
-        if(in_array($urlActual, $rutasProtegidas) && !$auth){
-            header('Location: /');
         }
 
         if($fn){
@@ -61,19 +55,6 @@ class Router{
         $contenido = ob_get_clean(); //vaciando memoria y reasignado los datos a esta variable
 
         include_once __DIR__ . "/views/layout.php"; 
-    }
-    //render para area administrativa
-    public function renderAdmin($view, $datos = []){
-        //leyendo datos del arreglo $datos
-        foreach($datos as $key => $value ){
-            $$key = $value; 
-        }
-
-        ob_start(); //almacenando datos en memoria
-        include_once __DIR__ . "/views/$view.php";
-        $contenido = ob_get_clean(); //vaciando memoria y reasignado los datos a esta variable
-
-        include_once __DIR__ . "/views/layout_admin.php"; 
     }
 
     public function paginaNoEncontrada(){

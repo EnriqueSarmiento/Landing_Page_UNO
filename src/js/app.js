@@ -10,13 +10,24 @@ document.addEventListener('DOMContentLoaded', function(){
   servicios();
   AOS.init();
   footer()
+  error404();
 })
 
 function eventListeners(){
   document.getElementById('burger').addEventListener('click', sidebar);
 
 }
+// PG ERROR 404 //
+function error404() {
+  if(window.location.pathname === '/error404'){
+    var header = document.getElementById('header-layout');
+    var footer = document.getElementById('footer-layout');
 
+    // ELIMINANDOLOS DEL LAYOUT //
+    header.style.display = 'none';
+    footer.style.display = 'none';
+  }
+}
 // SIDEBAR //
 function sidebar(){
     (async () => {

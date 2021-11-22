@@ -13,14 +13,14 @@
 </head>
 <body>
 
-    <header>
+    <header id="header-layout">
         <?php include __DIR__ . '/plantillas/header.php';  ?>
     </header>
     
     <?php   /** ESTO MUESTRA EL CONTENIDO DE LA VISTA POR EL CONTROLADOR */
         echo $contenido 
     ?>
-    <footer>
+    <footer id="footer-layout">
         <?php include __DIR__ . '/plantillas/footer.php';  ?>
     </footer>
 
