@@ -2,13 +2,9 @@
     background: -prefix-linear-gradient(top, $primario, $blanco)!important;
     background: linear-gradient(to bottom, $primario, $blanco)!important;
     padding-top: 1.5rem;
-    .servicios, .proceso{
-        .caja{
-            display: flex;
-            flex-direction: column;
-            overflow: auto;
-        }
-        .servicio{
+    .servicios, .procesos{
+        
+        .servicio, .proceso{
             background-color: $secundario;
             border-radius: 10px;
             width: 250px;
@@ -17,7 +13,7 @@
             margin-bottom: 1rem!important;
             cursor: pointer;
             position: relative;
-            .contenedor-servicio{
+            .contenedor-servicio, .contenedor-proceso{
                 width: 85%;
                 height: 100%;
                 display: flex;
@@ -31,11 +27,16 @@
                 margin-top: .5rem;
                 font-size: 20px;
             }
-            .mini-info{
+            .mini-info, .mini-proceso{
                 color: $blanco;
                 font-size: 15px;
                 font-weight: $delgada;
                 margin-top: .5rem;
+            }
+            .contenedor-proceso{
+                h3{
+                    text-transform: capitalize;
+                }
             }
             
         }
@@ -101,10 +102,173 @@
         }
         
     }
+    .planes{
+        .plan{
+            background-color: $secundario;
+            border-radius: 10px;
+            width: 100%;
+            padding: 1rem 0;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            .contenedor-plan{
+                width: 90%;
+                padding: 1rem 0xp!important;
+                margin: 0 auto;
+            }
+            .plan-item{
+                list-style: none;
+                display: inline-flex;
+                align-items: baseline;
+                color: $blanco;
+                font-size: 15px;
+                font-weight: $delgada;
+                margin-bottom: .5rem;
+                &:last-of-type{
+                    margin-bottom: 0px!important;
+                }
+            }
+            h3{
+                font-weight: $bold!important;
+                text-transform: capitalize!important;
+                font-size: 25px!important;
+                color: $blanco;
+                letter-spacing: 1.5px!important;
+            }
+            .lista-plan{
+                display: flex;
+                flex-flow: row wrap;
+                overflow: hidden;
+                justify-content: space-around;
+                padding: 0px;
+                margin-bottom: 0px!important;
+
+            }
+        }
+    }
+    .elegirnos{
+        .testimoniales{
+
+            .gota{
+                display: none;
+                background-color: $secundario!important;
+                border-radius: 50% 0% 50% 50%!important;
+                min-width: 125px;
+                width: 20%;
+                min-height: 125px;
+                height: 20%;
+                position: relative;
+                svg{
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 70%;
+                    height: 70%;
+                }
+            }
+            .contenido-testimonio{
+                background-color: $blanco;
+                border-radius: 10px;
+                .contenedor-contenido-test{
+                    padding: 1rem;
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-between;
+    
+                }
+                .comillas{
+                    width: 15%!important;
+                    height: 15%!important;
+                }
+                .comilla-svg{
+                    width: 100%!important;
+                    height: 100%!important;
+                    
+                }
+                .entrada{
+                    font-size: 15px;
+                    font-weight: $delgada;
+                    text-align: justify;
+                    width: 80%;
+                    margin-top: 8%!important;
+                }
+                .texto{
+                    margin-bottom: .75rem;
+                }
+                .nombre{
+                    text-transform: capitalize;
+                    font-weight: $bold;
+                    margin-bottom: .75rem;
+                }
+            }
+            
+        }
+    }
+    .contactanos{
+        .contacto{
+            display: flex;
+            flex-direction: column;
+        }
+        .sociales{
+            h3{
+                font-weight: $bold;
+                font-size: 15px!important;
+
+            }
+            .texto-sociales{
+                margin: 0 .5rem;
+                text-align: justify;
+                font-size: 15px;
+            }
+            .redes{
+                margin: 1rem auto;
+            }
+            .red{
+                display: flex;
+                flex-direction: row;
+                margin-left: 1rem;
+                margin-bottom: .75rem;
+            }
+            .bi{
+                margin-right: 1rem!important;
+            }
+        }
+        .formulario{
+            display: flex;
+            flex-direction: column;
+            input, textarea{
+                outline: none;
+                border-radius: 10px!important;
+                width: 100%!important;
+                margin-bottom: 1rem;
+                border: 1px solid rgba($color: $negro, $alpha: .1);
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+                box-shadow: inset 0px 2px 7px rgba($color: $secundario, $alpha: .15);
+                &::placeholder{
+                    padding-left: 1rem!important;
+                    color: $primario!important;
+                }
+                &:focus{
+                    border: 1px solid rgba($color: $secundario, $alpha: .35)!important;
+                }
+            }
+            .boton{
+                @include boton($secundario);
+                width: 100%!important;
+                padding-left: calc(50% - 29px);
+                padding-right: calc(50% - 29px);
+            }
+            
+        }
+    }
+
 }
 
 //*** SERVICIO EFECTOS HOVERS EN GENERAL ***//
-.servicio:hover{
+.servicio:hover, .proceso:hover{
     background-color: $terciario!important;
     box-shadow: 1px 5px 15px rgba($color: $secundario, $alpha: .25);
     transition: all .5s ease;
@@ -118,6 +282,20 @@
 //**  ANIMACION SERVICIOS ANIMATE.CSS **//
 .animate__animated.animate__zoomIn {
     --animate-duration: 1s;
+}
+
+//*** PLANES EFECTOS HOVERS EN GENERAL ***//
+.plan:hover{
+    background-color: $blanco!important;
+    .plan-item{
+        color: $primario!important;
+    }
+    h3{
+        color: $primario!important;
+    }
+    box-shadow: 1px 5px 15px rgba($color: $primario, $alpha: .25);
+    transition: all .4s ease-in-out;
+
 }
 
 //*** BREACKPOINTS ***//
@@ -163,6 +341,20 @@
             
         }
         
+        .elegirnos{
+            .testimonio{
+                display: flex;
+                flex-direction: row;
+                width: 100%!important;
+                justify-content: space-between;
+            }
+            .gota{
+                display: block!important;
+            }
+            .contenido-testimonio{
+                width: 60%!important;
+            }
+        }
     }
 }
 
@@ -171,7 +363,7 @@
         .cajas{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 1fr auto 1fr auto;
+            grid-template-rows: 1fr fit-content 1fr fit-content;
             grid-template-areas: 
             "design desarrollo"
             "info info"
@@ -206,6 +398,61 @@
                 width: 92%!important;
             }
         }
+        .barras{
+            .contenedor-plan{
+                display: flex;
+                flex-direction: row;
+                align-items: center!important;
+                h3{
+                    width: 40%!important;
+                }
+                .plan-item{
+                    width: 30%!important;
+                    margin-right: 0!important;
+                }
+            }
+        }
+        .elegirnos{
+            .gota{
+                display: block!important;
+                min-width: 200px!important;
+                min-height: 200px!important;
+            }
+            .contenido-testimonio{
+                width: 75%!important;
+            }
+        }
+        .contacto{
+            flex-direction: row!important;
+            justify-content: space-between;
+            .sociales{
+                width: 45%!important;
+                text-align: start!important;
+                .red, .texto-sociales{
+                    margin-left: 0px!important;
+                }
+                
+
+            }
+            .formulario{
+                width: 45%!important;
+            }
+        }
+
+    }
+}
+@media (min-width: 992px) {
+    .landing-page{
+        .barras{
+            .contenedor-plan{
+                width: 100%!important;
+
+            }
+        }
+        .contacto{
+            justify-content: space-around;
+        }
+
     }
 }
 
@@ -234,6 +481,7 @@
             }
             #design, #desarrollo, #cms, #seo{
                 grid-area: info;
+                margin-top: 1rem!important;
             }
             .mas-info{
                 max-width: 110rem!important;
@@ -269,5 +517,31 @@
                 width: 92%!important;
             }
         }
+        .barras{
+            .contenedor-plan{
+                h3{
+                    font-size: 40px!important;
+                }
+                .plan-item{
+                   width: 24%!important;
+                }
+            }
+        }
+        .elegirnos{
+            .gota{
+                min-width: 220px!important;
+                min-height: 220px!important;
+            }
+            .entrada{
+                font-size: 18px!important;
+            }
+            
+        }
+        .contacto{
+            margin: 0 auto;
+            width: 75%;
+        }
+
+
     }
 }

@@ -1,7 +1,10 @@
 body{
    overflow-x: hidden!important;
 }
-
+h2{
+    text-transform: uppercase;
+    font-weight: $bold;
+}
 a{
     text-decoration: none;
 }
