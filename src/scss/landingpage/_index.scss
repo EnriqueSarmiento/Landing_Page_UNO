@@ -2,6 +2,7 @@
     background: -prefix-linear-gradient(top, $primario, $blanco)!important;
     background: linear-gradient(to bottom, $primario, $blanco)!important;
     padding-top: 1.5rem;
+    padding-bottom: 30%!important;
     .servicios, .procesos{
         
         .servicio, .proceso{
@@ -443,6 +444,7 @@
 }
 @media (min-width: 992px) {
     .landing-page{
+        padding-bottom: 15%!important;
         .barras{
             .contenedor-plan{
                 width: 100%!important;

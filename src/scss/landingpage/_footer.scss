@@ -1,0 +1,93 @@
+.footer{
+    background-color: $blanco;
+    .contenedor-footer{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .footer-enlace{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        h3{
+            font-weight: $bold;
+            font-size: 15px;
+            text-transform: capitalize;
+        }
+        .sub-enlace{
+            display: flex;
+            flex-direction: column;
+            
+
+        }
+        .logo-footer{
+            display: none;
+        }
+    }
+    .enlace-foot{
+        margin-bottom: .5rem;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: $negro;
+        transform: scale(1);
+    }
+    .importante-footer{
+        padding-bottom: 1rem;
+        .enlace-foot{
+            margin-right: 1rem;
+            &:last-of-type{
+                margin-right: 0px!important;
+            }
+        }
+    }
+}
+//*** EFECTOS Y HOVER ***//
+.enlace-foot:hover{
+    transform: scale(1.05)!important;
+    margin-left: 5px!important;
+}
+.importante-footer{
+    .enlace-foot:hover{
+        margin-left: 0px!important;
+    }
+}
+.footer-enlace:hover, .enlace-foot:hover{
+    color: $primario;
+    transition: all .4s ease;
+}
+
+//*** BREAKPOINTS ***//
+@media (min-width: 576px) {
+    .footer{
+        .footer-enlace{
+            width: 30%!important;
+            .logo-footer{
+                display: block!important;
+                height: 80%;
+            }
+        }
+        .importante-footer{
+            text-align: center;
+        }
+    }
+}
+@media (min-width: 992px) {
+    .footer{
+        .footer-enlace{
+            width: 21%!important;
+        }
+        .logotipo{
+            position: relative;
+            width: 16%!important;
+            .logo-footer{
+                position: absolute;
+                right: 0;
+                top: 0;
+
+            }
+        }
+    }
+}

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
   eventListeners();
   navegador();
   servicios();
+  AOS.init();
 })
 
 function eventListeners(){
@@ -23,7 +24,7 @@ function sidebar(){
             <div class="navegacion d-flex flex-column">
                 <a class="enlace-nav" href="/">inicio</a>
                 <a class="enlace-nav" href="/servicios">Servicios</a>
-                <a class="enlace-nav" href="/portafolio">Portafolio</a>
+                <a class="enlace-nav" href="/portafolio">Planes</a>
                 <a class="enlace-nav" href="/contacto">Contacto</a>
                 <a class="enlace-nav" href="#"><i class="bi bi-search"></i></a>
             </div>
